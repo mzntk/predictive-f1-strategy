@@ -26,5 +26,4 @@ Rozważone zostały dwa główne scenariusze analityczne, podzielone na osobne s
 * **Zawartość:** Ponad 100 000 obserwacji zawierających m.in. informacje o mieszance opon (`Compound`), wieku opony (`TyreLife`), skumulowanej degradacji (`Cumulative_Degradation`) oraz pozycji na torze.
 
 ## Autor
-Julia Estkowska i Maja Zontek
-Wydział Matematyki, Fizyki i Informatyki UG
+Julia Estkowska i Maja Zontek | Wydział Matematyki, Fizyki i Informatyki UG
