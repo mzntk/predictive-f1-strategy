@@ -69,6 +69,10 @@ Wykorzystano nieparametryczny model kNN (dla `k=5` sąsiadów) oparty na głosow
 W celu rzetelnej oceny wygenerowano macierze pomyłek na zbiorze testowym. Ze względu na niezbalansowanie klas, skupiono się na Czułości (Sensitivity) oraz mierze F1-Score.
 
 <p align="center">
+  <img src="tabela-porownanie-modeli.png" width="98%" />
+</p>
+
+<p align="center">
   <img src="macierz-regresja.png" width="32%" />
   <img src="macierz-drzewo.png" width="32%" />
   <img src="macierz-knn.png" width="32%" />
