@@ -170,3 +170,52 @@ wykres_tree <- ggplot(data = cm_tree_data, aes(x = Reference, y = Prediction)) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))
 
 print(wykres_tree)
+
+# ==============================================================================
+# --- 7. Podsumowanie wszystkich metryk i wizualizacja tabeli ---
+# ==============================================================================
+library(gt)
+
+# Tworzymy tabelę pobierając całe wektory 'byClass' z oryginalnymi nazwami
+tabela_wynikow <- data.frame(
+  Model = c("Regresja Logistyczna", "Drzewo Decyzyjne", "k-Najbliższych Sąsiadów (kNN)"),
+  rbind(
+    cm_log$byClass,
+    cm_tree$byClass,
+    cm_knn$byClass
+  )
+)
+
+# Czyszczenie nazw wierszy i zaokrąglenie wyników do 3 miejsc po przecinku
+rownames(tabela_wynikow) <- NULL
+tabela_wynikow[,-1] <- round(tabela_wynikow[,-1], 3)
+
+# Generowanie sformatowanej tabeli
+wizualizacja_tabeli <- tabela_wynikow %>%
+  gt() %>%
+  tab_header(
+    title = md("**Porównanie Modeli Predykcyjnych**"),
+    subtitle = "Zjazdy do Pit Stopu w Formule 1 (Pełne metryki)"
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels()
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "lightgreen"),
+      cell_text(weight = "bold")
+    ),
+    locations = cells_body(
+      rows = 3
+    )
+  ) %>%
+  tab_options(
+    heading.background.color = "#2E4053", 
+    column_labels.background.color = "#EAECEE",
+    table.border.top.color = "black",
+    table.border.bottom.color = "black",
+    table.font.size = px(12) # Zmniejszona czcionka, by zmieścić 11 kolumn
+  )
+
+print(wizualizacja_tabeli)
