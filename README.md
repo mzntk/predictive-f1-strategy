@@ -25,8 +25,10 @@ W strukturze danych słupek odpowiadający klasie "0" (brak zjazdu) jest dominuj
 
 **Wniosek:** Dane są silnie niezbalansowane. Oznacza to, że będziemy musieli uważnie dobierać metryki oceny modeli – zwykła dokładność (Accuracy) byłaby w tym przypadku zwodnicza. Konieczna jest optymalizacja pod kątem czułości i miary F1.
 
-![Rozkład zmiennej celu](wykres_PitNextLap.png)
-![Rozkład wieku opony](rozklad_wieku_opon.png)
+<p align="center">
+  <img src="wykres_PitNextLap.png" width="49%" />
+  <img src="rozklad_wieku_opon.png" width="49%" />
+</p>
 
 ### 3.2. Analiza korelacji
 Najwyższa korelacja zaobserwowana w macierzy to zaledwie 0.49 (pomiędzy postępem wyścigu a wiekiem opony – co jest zjawiskiem logicznym), a reszta to słabe zależności (ok. 0.32) lub całkowity brak korelacji.
